@@ -1,0 +1,128 @@
+/*global vars*/
+:root {
+    --colPrim1: #40a8f5;
+    --colPrim2: #2b73a8;
+    --colPrim3: #8c8ff7;
+    --colPrim4: #70f7c9;
+    --colPrim5: #3da899;
+
+    --colSec1: #d9eefd;
+    --colSec2: #e3e3fd;
+    --colSec3: #e3fdf4;
+    --colSec4: #5556b9;
+
+    --colNeu1: #fff;
+    --colNeu2: #d5d5d5;
+    --colNeu3: #aaa;
+    --colNeu4: #555;
+    --colNeu5: #151515;
+    
+    --colInt: #8f805e;
+    --colInfo: #6b9cbf;
+    --colWarn: #ffc235;
+    --colSucc: #8abf28;
+    --colDang: #f85333;
+
+    --fontH1: 700 calc(54rem/16) 'Public Sans';
+    --fontH2: 600 calc(34rem/16) 'Public Sans';
+    --fontH3: 400 calc(30rem/16) 'Public Sans';
+    --fontH4: 300 calc(24rem/16) 'Public Sans';
+    --fontP: 300 calc(16rem/16) 'Roboto';
+    --fontSmall:300 calc(14rem/16) 'Public Sans';
+
+    --baseTextSpace: 1.5rem;
+    --gridGap: 0rem;
+    --baseSpace: 2em;
+    --baseWidth: 5%;
+}
+/*reset style*/
+* {
+    margin: 0;
+	padding: 0;
+    border: 0;
+    font: 1rem/1 'Roboto', sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+/*base style*/
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    width: 100%;
+}
+/*color style*/
+nav a {color: var(--colNeu5);}
+body {color: var(--colNeu4);}
+body > header, body > footer {background: var(--colNeu2);}
+aside {background: var(--colPrim1);}
+
+/*text style*/
+h1 {font: var(--fontH1); color: var(--colNeu1);}
+h2 {font: var(--fontH2); color: var(--colNeu1);}
+h3 {font: var(--fontH3);}
+h4 {font: var(--fontH4);}
+p {font: var(--fontP);}
+small, time {font: var(--fontSmall);}
+main ol {list-style: decimal inside;}
+main ul {list-style: disc inside;}
+nav a {text-decoration: none;}
+nav ul {list-style: none;}
+
+/*spacing*/
+h1, h2, h3, h4, p, ol, article ul
+{margin: var(--baseTextSpace) 0;}
+body > header, body > footer, main {
+    padding: var(--baseSpace) var(--baseWidth);
+}
+
+/*layout*/
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--gridGap);
+    background-color: var(--colPrim2);
+    background-image: url("../img/photos/hero.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    height: 500px;
+}
+article {grid-column: 1 / 13;}
+main > header, main > footer {grid-column: 1 / span 12;}
+.floatLeft {float: left;}
+.floatRight {float: right;}
+.centerBlock {margin: auto; display: block;}
+
+body > header > nav > ul > li > a {
+    display: block;
+    background: blue;
+    font: var(--fontH3);
+}
+article > header {
+    width: 80%;
+}
+body > header > nav > ul {
+    color: purple;
+    width: inherit;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+/*animations*/
+
+
+/*media queries*/
+@media(hover: hover) and (pointer: fine) {
+    /*hover states: use only on desktop as visual cue*/
+}
+@media (prefers-reduced-motion: reduce) {
+    /*change animation classes:: .animation(s) {animation: none;}*/
+}
+@media (prefers-color-scheme: dark) {
+    /* change root color variables for high contrast:: :root {--var: #HEXHEX;}*/
+}
+@media print {
+    /*change page styling to be printer friendly - less ink, high contrast, smaller image*/
+}
